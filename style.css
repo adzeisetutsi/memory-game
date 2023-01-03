@@ -12,7 +12,7 @@ body {
 #options {
   width: 327px;
   height: 386px;
-  background-color: aqua;
+  background-color: #fcfcfc;
   margin-left: auto;
   margin-right: auto;
   margin-top: 45px;
@@ -26,10 +26,14 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.select-theme {
+  color: #7191a5;
+}
 #theme-buttons button {
   width: 134px;
   height: 40px;
   border-radius: 20px;
+  border: none;
 }
 #theme-buttons {
   display: flex;
@@ -38,6 +42,13 @@ body {
 }
 .theme-btn-1 {
   margin-right: 11px;
+  background-color: #152938;
+  color: #fcfcfc;
+}
+.theme-btn-2 {
+  margin-right: 11px;
+  background-color: #bcced9;
+  color: #fcfcfc;
 }
 #number-selection {
   position: relative;
@@ -56,11 +67,24 @@ body {
   width: 62px;
   height: 40px;
   border-radius: 20px;
+  border: none;
+}
+.numbers-of-players {
+  color: #7191a5;
 }
 .number-btn-1,
 .number-btn-2,
 .number-btn-3 {
   margin-right: 10px;
+}
+.number-btn-1 {
+  background-color: #152938;
+  color: #fcfcfc;
+}
+.number-btn-2,
+.number-btn-3 {
+  background-color: #bcced9;
+  color: #fcfcfc;
 }
 #grid-size-selection {
   position: relative;
@@ -69,6 +93,9 @@ body {
   height: 70px;
   margin-left: auto;
   margin-right: auto;
+}
+.grid-size {
+  color: #7191a5;
 }
 #grid-buttons {
   display: flex;
@@ -79,9 +106,16 @@ body {
   width: 134px;
   height: 40px;
   border-radius: 20px;
+  border: none;
 }
 .grid-btn-1 {
   margin-right: 11px;
+  background-color: #152938;
+  color: #fcfcfc;
+}
+.grid-btn-2 {
+  background-color: #bcced9;
+  color: #fcfcfc;
 }
 #start-game {
   position: relative;
@@ -96,9 +130,12 @@ body {
   width: 279px;
   height: 48px;
   border-radius: 20px;
+  background-color: #fda214;
+  color: #fcfcfc;
+  border: none;
 }
 .select-theme,
-.number-of-players,
+.numbers-of-players,
 .grid-size {
   font-weight: 700;
   font-size: 15px;
