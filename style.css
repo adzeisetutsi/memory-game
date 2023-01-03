@@ -52,7 +52,7 @@ body {
 }
 #number-selection {
   position: relative;
-  top: 24px;
+  top: 34px;
   width: 270px;
   height: 70px;
   margin-left: auto;
@@ -72,23 +72,20 @@ body {
 .numbers-of-players {
   color: #7191a5;
 }
-.number-btn-1,
-.number-btn-2,
-.number-btn-3 {
-  margin-right: 10px;
-}
 .number-btn-1 {
   background-color: #152938;
   color: #fcfcfc;
+  margin-right: 10px;
 }
 .number-btn-2,
 .number-btn-3 {
   background-color: #bcced9;
   color: #fcfcfc;
+  margin-right: 10px;
 }
 #grid-size-selection {
   position: relative;
-  top: 24px;
+  top: 38px;
   width: 270px;
   height: 70px;
   margin-left: auto;
@@ -119,7 +116,7 @@ body {
 }
 #start-game {
   position: relative;
-  top: 50px;
+  top: 70px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
