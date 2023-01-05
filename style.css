@@ -1,6 +1,11 @@
 body {
   background-color: #152938;
 }
+#container {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 #memory {
   width: 122px;
   height: 40px;
@@ -8,6 +13,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   color: #fcfcfc;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39.68px;
+  font-size: Atkinson Hyperlegible;
 }
 #options {
   width: 327px;
@@ -21,19 +30,29 @@ body {
 #theme-selection {
   position: relative;
   top: 24px;
-  width: 270px;
+  width: 279px;
   height: 70px;
   margin-left: auto;
   margin-right: auto;
 }
-.select-theme {
+.select-theme,
+.numbers-of-players,
+.grid-size {
   color: #7191a5;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18.6px;
+  font-family: Atkinson Hyperlegible;
 }
 #theme-buttons button {
   width: 134px;
   height: 40px;
   border-radius: 20px;
   border: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.84px;
+  font-style: Atkinson Hyperlegible;
 }
 #theme-buttons {
   display: flex;
@@ -46,14 +65,13 @@ body {
   color: #fcfcfc;
 }
 .theme-btn-2 {
-  margin-right: 11px;
   background-color: #bcced9;
   color: #fcfcfc;
 }
 #number-selection {
   position: relative;
   top: 34px;
-  width: 270px;
+  width: 279px;
   height: 70px;
   margin-left: auto;
   margin-right: auto;
@@ -68,16 +86,22 @@ body {
   height: 40px;
   border-radius: 20px;
   border: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.84px;
+  font-style: Atkinson Hyperlegible;
 }
-.numbers-of-players {
-  color: #7191a5;
-}
+
 .number-btn-1 {
   background-color: #152938;
   color: #fcfcfc;
   margin-right: 10px;
 }
-.number-btn-2,
+.number-btn-2 {
+  margin-right: 11px;
+  color: #fcfcfc;
+  background-color: #bcced9;
+}
 .number-btn-3 {
   background-color: #bcced9;
   color: #fcfcfc;
@@ -86,14 +110,12 @@ body {
 #grid-size-selection {
   position: relative;
   top: 38px;
-  width: 270px;
+  width: 279px;
   height: 70px;
   margin-left: auto;
   margin-right: auto;
 }
-.grid-size {
-  color: #7191a5;
-}
+
 #grid-buttons {
   display: flex;
   justify-content: center;
@@ -104,6 +126,10 @@ body {
   height: 40px;
   border-radius: 20px;
   border: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.84px;
+  font-style: Atkinson Hyperlegible;
 }
 .grid-btn-1 {
   margin-right: 11px;
@@ -114,7 +140,7 @@ body {
   background-color: #bcced9;
   color: #fcfcfc;
 }
-#start-game {
+#start-game-btn {
   position: relative;
   top: 70px;
   margin-left: auto;
@@ -122,15 +148,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-#start-game button {
   width: 279px;
   height: 48px;
   border-radius: 20px;
   background-color: #fda214;
   color: #fcfcfc;
   border: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.32px;
 }
+
 .select-theme,
 .numbers-of-players,
 .grid-size {
@@ -138,4 +166,94 @@ body {
   font-size: 15px;
   line-height: 18.6px;
   font-family: Atkinson Hyperlegible;
+}
+/* Tablet Styling */
+@media (min-width: 768px) {
+  #container {
+    margin-top: 169px;
+  }
+  #memory {
+    width: 153px;
+    height: 50px;
+    font-size: 40px;
+    line-height: 49.6px;
+  }
+  #options {
+    width: 654px;
+    height: 559px;
+    margin-top: 78px;
+  }
+  #theme-selection {
+    width: 542px;
+    height: 93px;
+  }
+  .theme-btn-1 {
+    margin-right: 30px;
+  }
+  #number-selection {
+    width: 541px;
+    height: 93px;
+    top: 40px;
+  }
+
+  .number-btn-1 {
+    margin-right: 21px;
+  }
+  .number-btn-2,
+  .number-btn-3 {
+    margin-right: 22px;
+  }
+  #number-buttons button {
+    width: 119px;
+    height: 52px;
+    font-size: 24px;
+    line-height: 32.24px;
+    border-radius: 30px;
+  }
+  #theme-selection button,
+  #grid-buttons button {
+    width: 256px;
+    height: 52px;
+    font-size: 26px;
+    line-height: 32.24px;
+    border-radius: 30px;
+  }
+  #grid-size-selection {
+    width: 542px;
+    height: 93px;
+    top: 50px;
+  }
+  .grid-btn-1 {
+    margin-right: 30px;
+  }
+  #start-game-btn {
+    top: 95px;
+    width: 541px;
+    height: 70px;
+    font-size: 32px;
+    line-height: 39.68px;
+    border-radius: 30px;
+  }
+  .select-theme,
+  .numbers-of-players,
+  .grid-size {
+    font-size: 20px;
+    line-height: 24.8px;
+  }
+}
+/* Desktop Styling */
+@media (min-width: 1000px) {
+  #container {
+    width: 654px;
+    height: 687px;
+    margin-top: 54px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #options {
+    margin-top: 40px;
+  }
+  #memory {
+    margin-top: 0;
+  }
 }
