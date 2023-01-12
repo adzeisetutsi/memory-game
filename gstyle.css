@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  width: 327px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.76px;
+  font-family: Atkinson Hyperlegible;
+  color: #152938;
+}
+#menu-btn {
+  width: 78px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fda214;
+  color: #fcfcfc;
+  border: none;
+}
+#memory-game {
+  display: grid;
+  place-items: center;
+  margin-top: 80px;
+  grid-template-rows: auto;
+}
+button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#icons {
+  width: 326.88px;
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 0.5em;
+}
+.icon {
+  width: 70px;
+  height: 70px;
+  background-color: #304859;
+  border-radius: 50%;
+  /* cursor: pointer; */
+  transition: 0.3s all ease;
+  display: grid;
+  place-items: center;
+}
+.icon i {
+  opacity: 0;
+  color: #fcfcfc;
+}
+.icon.clicked {
+  background-color: #bcced9;
+}
+.icon.correct {
+  background-color: lightgreen;
+}
+.icon.clicked i,
+.icon.icon.correct i {
+  opacity: 1;
+}
+.icon.incorrect {
+  background-color: rgb(241, 95, 95);
+}
