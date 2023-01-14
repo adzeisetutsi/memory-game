@@ -27,7 +27,10 @@ h2 {
   color: #fcfcfc;
   border: none;
 }
-#memory-game {
+/* 4x4 icon  */
+#icon-4x4 {
+opacity: 0
+; /* Change value of Opacity*/
   display: grid;
   place-items: center;
   margin-top: 80px;
@@ -50,12 +53,14 @@ button {
   height: 70px;
   background-color: #304859;
   border-radius: 50%;
+  border: 1px solid greenyellow;
   /* cursor: pointer; */
   transition: 0.3s all ease;
   display: grid;
   place-items: center;
 }
 .icon i {
+  
   opacity: 0;
   color: #fcfcfc;
 }
@@ -72,3 +77,5 @@ button {
 .icon.incorrect {
   background-color: rgb(241, 95, 95);
 }
+
+/* 6x6 icon */
