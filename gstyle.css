@@ -28,9 +28,8 @@ h2 {
   border: none;
 }
 /* 4x4 icon  */
-#icon-4x4 {
-opacity: 0
-; /* Change value of Opacity*/
+#theme {
+  opacity: 0; /* Value of Opacity should be 0 */
   display: grid;
   place-items: center;
   margin-top: 80px;
@@ -41,7 +40,7 @@ button {
   height: 30px;
   border-radius: 50%;
 }
-#icons {
+#icons1 {
   width: 326.88px;
   border: 2px solid red;
   display: grid;
@@ -53,14 +52,14 @@ button {
   height: 70px;
   background-color: #304859;
   border-radius: 50%;
-  border: 1px solid greenyellow;
   /* cursor: pointer; */
   transition: 0.3s all ease;
   display: grid;
   place-items: center;
 }
+
+
 .icon i {
-  
   opacity: 0;
   color: #fcfcfc;
 }
@@ -79,3 +78,19 @@ button {
 }
 
 /* 6x6 icon */
+#theme2{
+  opacity: 0; /* Value of Opacity should be 0 */
+  display: grid;
+  place-items: center;
+}
+#icons2{
+  width: 326.88px;
+  border: 2px solid red;
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 0.2em;
+}
+#icons2 .icon {
+  width: 40px;  
+  height: 40px;
+}

@@ -17,16 +17,23 @@ let gridSizeParameter = parameters.get("gridSize")
 // Function to load what the player selected
 const loadIcon4x4 = (theme,grid) => {
     if ( theme === "Icons" && grid === "4x4") {
-        document.getElementById("icon-4x4").style.opacity = "1"
+        document.getElementById("theme").style.opacity = "1"
+        document.querySelector(".icon-6x6").remove()
+    } else if ( theme === "Icons" && grid === "6x6"){
+        document.getElementById("theme2").style.opacity = 1;
+        document.querySelector(".icon-4x4").remove();
     }
 }
+
 window.addEventListener("load", function(){
     loadIcon4x4(themeParameter, gridSizeParameter)
 });
 
 
 
-const icons = document.querySelectorAll("#icons .icon");
+// The function for the game's logic
+const logicFunction = (a) => {
+    const icons = document.querySelectorAll(a);
 icons.forEach((icon) => {
     icon.onclick = function(){
         icon.classList.add("clicked");
@@ -56,18 +63,15 @@ icons.forEach((icon) => {
                 incorrectIcons[0].classList.remove("clicked");
                 incorrectIcons[1].classList.remove("incorrect");
                 incorrectIcons[1].classList.remove("clicked");
-
                 },600 )
             }
         }
-        // console.log(firstSelection);
-        // console.log(secondSelection);
-        
-        
-        
     }
-    
 })
+}
+logicFunction("#icons1 .icon")
+logicFunction("#icons2 .icon")
+
 
 /*
 <i class="fa-solid fa-0"></i>
@@ -80,4 +84,22 @@ icons.forEach((icon) => {
 <i class="fa-solid fa-7"></i>
 <i class="fa-solid fa-8"></i>
 <i class="fa-solid fa-9"></i>
+*/
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 */
