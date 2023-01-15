@@ -42,7 +42,6 @@ button {
 }
 #icons1 {
   width: 326.88px;
-  border: 2px solid red;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 0.5em;
@@ -60,22 +59,22 @@ button {
 
 
 .icon i {
-  opacity: 0;
+  opacity: 0; /* Value of Opacity should be 0 */
   color: #fcfcfc;
 }
 .icon.clicked {
   background-color: #bcced9;
 }
 .icon.correct {
-  background-color: lightgreen;
+  background-color: #bcced9;
 }
 .icon.clicked i,
 .icon.icon.correct i {
   opacity: 1;
 }
-.icon.incorrect {
+/* .icon.incorrect {
   background-color: rgb(241, 95, 95);
-}
+} */
 
 /* 6x6 icon */
 #theme2{
@@ -85,7 +84,6 @@ button {
 }
 #icons2{
   width: 326.88px;
-  border: 2px solid red;
   display: grid; 
   grid-template-columns: repeat(6, 1fr);
   row-gap: 0.2em;
@@ -93,4 +91,33 @@ button {
 #icons2 .icon {
   width: 40px;  
   height: 40px;
+}
+/* 4x4 numbers */
+#theme3{
+  opacity: 0; /* Value of Opacity should be 0 */
+  display: grid;
+  place-items: center;
+}
+#icons3{
+  width: 326.88px;
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 0.2em;
+}
+
+/* 6x6 numbers */
+#theme4{
+  opacity: 0; /* Value of Opacity should be 0 */
+  display: grid;
+  place-items: center;
+}
+#icons4 .icon {
+  width: 40px;  
+  height: 40px;
+}
+#icons4{
+  width: 326.88px;
+  display: grid; 
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 0.2em;
 }

@@ -18,10 +18,24 @@ let gridSizeParameter = parameters.get("gridSize")
 const loadIcon4x4 = (theme,grid) => {
     if ( theme === "Icons" && grid === "4x4") {
         document.getElementById("theme").style.opacity = "1"
-        document.querySelector(".icon-6x6").remove()
+        document.querySelector(".icon-6x6").remove();
+        document.querySelector(".num-4x4").remove();
+        document.querySelector(".num-6x6").remove();
     } else if ( theme === "Icons" && grid === "6x6"){
         document.getElementById("theme2").style.opacity = 1;
         document.querySelector(".icon-4x4").remove();
+        document.querySelector(".num-4x4").remove();
+        document.querySelector(".num-6x6").remove();
+    } else if ( theme === "Numbers" && grid === "4x4"){
+        document.getElementById("theme3").style.opacity = 1;
+        document.querySelector(".icon-4x4").remove();
+        document.querySelector(".icon-6x6").remove();
+        document.querySelector(".num-6x6").remove();
+    } else {
+        document.getElementById("theme4").style.opacity = 1;
+        document.querySelector(".icon-4x4").remove();
+        document.querySelector(".icon-6x6").remove();
+        document.querySelector(".num-4x4").remove();
     }
 }
 
@@ -71,35 +85,6 @@ icons.forEach((icon) => {
 }
 logicFunction("#icons1 .icon")
 logicFunction("#icons2 .icon")
+logicFunction("#icons3 .icon")
+logicFunction("#icons4 .icon")
 
-
-/*
-<i class="fa-solid fa-0"></i>
-<i class="fa-solid fa-1"></i>
-<i class="fa-solid fa-2"></i>
-<i class="fa-solid fa-3"></i>
-<i class="fa-solid fa-4"></i>
-<i class="fa-solid fa-5"></i>
-<i class="fa-solid fa-6"></i>
-<i class="fa-solid fa-7"></i>
-<i class="fa-solid fa-8"></i>
-<i class="fa-solid fa-9"></i>
-*/
-/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
