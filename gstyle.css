@@ -121,3 +121,58 @@ button {
   grid-template-columns: repeat(6, 1fr);
   row-gap: 0.2em;
 }
+/* Statistics */
+.stats{
+  opacity: 0; /* Value of Opacity should be 0 */
+  width: 327px;
+  height: 70px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 112.2px;
+}
+#timer-div{
+  width: 150px;
+  height: 70px;
+  background-color: #BCCED9;
+  margin-right: 20px;
+}
+.timer{
+  width: 87px;
+  height: 51px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-family: 
+  'Atkinson  Hyperlegible';
+}
+.sec{
+  position: absolute;
+  right: 232px;
+  bottom: 50px;
+  font-weight: 700;
+  color: #152938;
+  width: 56.43px;
+  height: 30px;
+}
+#moves-div{
+  width: 150px;
+  height: 70px;
+  background-color: #BCCED9;
+}
+.moves{
+  width: 87px;
+  height: 51px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.mov{
+  position: absolute;
+  bottom: 60px;
+  right: 100px;
+  font-weight: 700;
+  color: #152938;
+}

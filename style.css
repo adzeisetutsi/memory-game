@@ -16,7 +16,7 @@ body {
   font-size: 32px;
   font-weight: 700;
   line-height: 39.68px;
-  font-size: Atkinson Hyperlegible;
+  font-size: "Atkinson Hyperlegible";
 }
 #options {
   width: 327px;
@@ -42,7 +42,7 @@ body {
   font-size: 15px;
   font-weight: 700;
   line-height: 18.6px;
-  font-family: Atkinson Hyperlegible;
+  font-family: "Atkinson Hyperlegible";
 }
 #theme-buttons button {
   width: 134px;
@@ -52,7 +52,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 19.84px;
-  font-style: Atkinson Hyperlegible;
+  font-style: "Atkinson Hyperlegible";
 }
 #theme-buttons {
   display: flex;
@@ -89,7 +89,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 19.84px;
-  font-style: Atkinson Hyperlegible;
+  font-style: "Atkinson Hyperlegible";
 }
 
 .number-btn-1 {
@@ -133,7 +133,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 19.84px;
-  font-style: Atkinson Hyperlegible;
+  font-style: "Atkinson Hyperlegible";
 }
 .grid-btn-1 {
   margin-right: 11px;
