@@ -7,13 +7,11 @@ const themeButton1 = () => {
     selectTheme = themeBtn1.innerHTML;
     themeBtn1.style.backgroundColor = '#304859'
     themeBtn2.style.backgroundColor = '#BCCED9'
-    // console.log(selectTheme);
 }
 const themeButton2 = () => {
     selectTheme = themeBtn2.innerHTML;
     themeBtn2.style.backgroundColor = '#304859'
     themeBtn1.style.backgroundColor = '#BCCED9'
-    // console.log(selectTheme);
 }
 themeBtn1.onclick = themeButton1;
 themeBtn2.onclick = themeButton2;
@@ -31,7 +29,6 @@ const numberButton1 = () => {
     numBtn2.style.backgroundColor = '#BCCED9'
     numBtn3.style.backgroundColor = '#BCCED9'
     numBtn4.style.backgroundColor = '#BCCED9'
-    // console.log(selectPlayers);
 }
 const numberButton2 = () => {
     selectPlayers = numBtn2.innerHTML;
@@ -39,7 +36,6 @@ const numberButton2 = () => {
     numBtn1.style.backgroundColor = '#BCCED9'
     numBtn3.style.backgroundColor = '#BCCED9'
     numBtn4.style.backgroundColor = '#BCCED9'
-    // console.log(selectPlayers);
 }
 const numberButton3 = () => {
     selectPlayers = numBtn3.innerHTML;
@@ -47,7 +43,6 @@ const numberButton3 = () => {
     numBtn1.style.backgroundColor = '#BCCED9'
     numBtn2.style.backgroundColor = '#BCCED9'
     numBtn4.style.backgroundColor = '#BCCED9'
-    // console.log(selectPlayers);
 }
 const numberButton4 = () => {
     selectPlayers = numBtn4.innerHTML;
@@ -55,7 +50,6 @@ const numberButton4 = () => {
     numBtn1.style.backgroundColor = '#BCCED9'
     numBtn2.style.backgroundColor = '#BCCED9'
     numBtn3.style.backgroundColor = '#BCCED9'
-    // console.log(selectPlayers);
 }
 numBtn1.onclick = numberButton1
 numBtn2.onclick = numberButton2
@@ -71,13 +65,11 @@ const gridSizeButton1 = () => {
     selectGrid = gridBtn1.innerHTML;
     gridBtn1.style.backgroundColor = '#304859'
     gridBtn2.style.backgroundColor = '#BCCED9'
-    // console.log(selectGrid)
 }
 const gridSizeButton2 = () => {
     selectGrid = gridBtn2.innerHTML;
     gridBtn2.style.backgroundColor = '#304859'
     gridBtn1.style.backgroundColor = '#BCCED9'
-    // console.log(selectGrid)
 }
 gridBtn1.onclick = gridSizeButton1;
 gridBtn2.onclick = gridSizeButton2;
@@ -94,6 +86,5 @@ const startGame = () => {
     let searchParams = new URLSearchParams(parameterObj);
     let queryString = searchParams.toString();
     window.location.href = './game.html?' + queryString;
-
 }
 startTheGame.onclick = startGame;

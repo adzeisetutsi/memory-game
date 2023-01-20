@@ -202,37 +202,21 @@ logicFunction("#icons2 .icon")
 logicFunction("#icons3 .icon")
 logicFunction("#icons4 .icon")
 
-// var startTime, endTime;
+// Restarting the game
+let restartGame = document.querySelector("#restart-btn");
+restartGame.addEventListener("click", function(){
+    const parameterObj = {
+        theme: themeParameter,
+        numberOfPlayers: numberOfPlayersParameter,
+        gridSize: gridSizeParameter
+    }
+    let searchParams = new URLSearchParams(parameterObj);
+    let queryString = searchParams.toString();
+    window.location.href = './game.html?' + queryString;
+});
 
-// function start() {
-//     startTime = new Date();
-// };
-
-// function end() {
-//     let min = 0;
-//     endTime = new Date();
-//   var timeDiff = endTime - startTime; //in ms
-//   // strip the ms
-//     timeDiff /= 1000;
-
-//   // get seconds 
-//     var seconds = Math.round(timeDiff);
-//     if (seconds < 59){
-        
-//         document.querySelector(".time-elapsed").innerHTML = min + ":" + seconds;
-//         // sec++;
-//     }         
-//     else {
-//         document.querySelector(".time-elapsed").innerHTML = min + ":" + seconds;
-//         seconds = 0;
-//         min++;
-//     }
-//     console.log(seconds + " seconds");
-// }
-// let menu = document.getElementById("menu-btn");
-// let stopMe = document.querySelector("#stop");
-
-// menu.addEventListener("click", start);
-// stopMe.addEventListener("click", end);
-
-
+// Setting up new a game
+let setUpNewGame = document.querySelector("#setup-new-game-btn");
+setUpNewGame.addEventListener("click", function(){
+    window.location.href = './index.html';
+})
