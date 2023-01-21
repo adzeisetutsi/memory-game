@@ -19,21 +19,38 @@ let numberOfPlayersParameter = parameters.get("numberOfPlayers")
 // Obtaining the grid-size Parameters
 let gridSizeParameter = parameters.get("gridSize")
 
+// The menu popup
+let selectMenuPopup = document.getElementById("menu-btn");
+let menuPopup = document.getElementById("menu-btn-popup");
+
+const menuPopupFunc = () => {
+    menuPopup.style.visibility = "visible";
+    // menuPopup.style.top = "0px";
+    menuPopup.style.transform = "scale(1)";
+    menuPopup.style.top = "170px";
+    document.body.style.background = "rgba(0,0,0,0.6)";
+}
+selectMenuPopup.addEventListener("click", menuPopupFunc);
+
+
+
 // Timer function
 const startTimer = () => {
     let min = 0
     let sec = 0;
     timer = setInterval(() => {
-        document.querySelector(".sec").innerHTML = min + ":" + "0"+ sec;
+        let displayTime = document.querySelector(".sec");
+
+        displayTime.innerHTML = min + ":" + "0"+ sec;
         
         if (sec < 59){
             if (sec > 9){
-                document.querySelector(".sec").innerHTML = min + ":" + sec;
+                displayTime.innerHTML = min + ":" + sec;
                 }
             sec++;
         }         
         else {
-            document.querySelector(".sec").innerHTML = min + ":" + sec;
+            displayTime.innerHTML = min + ":" + sec;
             sec = 0;
             min++;
         }
@@ -112,10 +129,6 @@ const displayResults = () => {
     soloMovesTaken.innerHTML+=  moves + " " + "Moves";
     elapsedTime.innerHTML += document.querySelector(".sec").innerHTML;
 }
-// menu.addEventListener("click",displayResults);
-
-
-
 
 // The function for the game's logic
 const logicFunction = (a) => {
@@ -169,9 +182,6 @@ const logicFunction = (a) => {
                         stopTimer();
                     }
                 }
-                
-
-
 
             } else {
                 const incorrectIcons = document.querySelectorAll(".icon.clicked");
@@ -203,8 +213,10 @@ logicFunction("#icons3 .icon")
 logicFunction("#icons4 .icon")
 
 // Restarting the game
-let restartGame = document.querySelector("#restart-btn");
-restartGame.addEventListener("click", function(){
+let restartGameEnd = document.querySelector("#restart-btn");
+let restartGameMenu = document.getElementById("menu-restart-btn");
+
+const restartGameFunc = () => {
     const parameterObj = {
         theme: themeParameter,
         numberOfPlayers: numberOfPlayersParameter,
@@ -213,10 +225,32 @@ restartGame.addEventListener("click", function(){
     let searchParams = new URLSearchParams(parameterObj);
     let queryString = searchParams.toString();
     window.location.href = './game.html?' + queryString;
-});
+}
+restartGameEnd.addEventListener("click", restartGameFunc);
+restartGameMenu.addEventListener("click", restartGameFunc);
+
+
 
 // Setting up new a game
-let setUpNewGame = document.querySelector("#setup-new-game-btn");
-setUpNewGame.addEventListener("click", function(){
+let setUpNewGameEnd = document.querySelector("#setup-new-game-btn");
+let setUpNewGameMenu = document.getElementById("menu-new-game-btn");
+
+const setUpNewGameFunc = () => {
     window.location.href = './index.html';
-})
+}
+setUpNewGameEnd.addEventListener("click", setUpNewGameFunc)
+setUpNewGameMenu.addEventListener("click", setUpNewGameFunc)
+
+// Resuming the game
+let resumeGame = document.getElementById("menu-resume-game-btn");
+const resumeGameFunc = () => {
+    // document.getElementById("menu-btn-popup").remove();
+    document.body.style.background = "";
+    menuPopup.style.visibility = "hidden";
+    // menuPopup.style.top = "0px";
+    menuPopup.style.transform = "scale(0.1)";
+    menuPopup.style.top = "-90px";
+    // menuPopup.style.transition = "transform 0.4s, bottom 0.4s";
+
+}
+resumeGame.addEventListener("click",resumeGameFunc);

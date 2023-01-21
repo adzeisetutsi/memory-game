@@ -176,6 +176,37 @@ button {
   margin-left: 70px;
   margin-top: -30px;
 }
+#menu-btn-popup{
+  visibility: hidden; /* Value should be hidden*/
+  width: 327px;
+  height: 224px;
+  display: grid;
+  place-items: center;
+  margin-left: 24px;
+  border-radius: 15px;
+  position: absolute;
+  top: -90px;
+  transition: transform 0.4s, bottom 0.4s;
+  transform: scale(0.1);
+  background-color: #F2F2F2;
+}
+#menu-restart-btn, #menu-new-game-btn, #menu-resume-game-btn{
+  width: 279px;
+  height: 48px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.32px;
+  border: none;
+}
+#menu-restart-btn{
+  color: #F2F2F2;
+  background-color: #FDA214;
+}
+#menu-new-game-btn, #menu-resume-game-btn{
+  color: #304859;
+  background-color: #DFE7EC;
+}
 #popup{
   visibility: hidden; /* Value should be hidden*/
   width: 327px;
@@ -191,7 +222,7 @@ button {
   place-items: center;
   border-radius: 15px;
   bottom: 170px;
-  transition: transform 0.4s, top 0.4s;
+  transition: transform 0.4s, bottom 0.4s;
 }
 .popup-info{
   width: 238px;
@@ -233,6 +264,9 @@ button {
   padding-right: 70px;
   padding-top: 12px;
   display: inline-block;
+  color: #7191A5;
+  font-size: 13px;
+  font-weight: 700;
   /* display: inline-flex; */
   justify-content: space-evenly;
 }
