@@ -147,14 +147,17 @@ button {
   margin-top: 10px;
   font-family: 
   'Atkinson  Hyperlegible';
+  color: #7191A5;
 }
 .sec{
   font-weight: 700;
   color: #152938;
   width: 56.43px;
   height: 30px;
-  margin-left: 60px;
+  margin-left: 55px;
   margin-top: -30px;
+  color: #304859;
+  font-size: 24px;
 }
 #moves-div{
   width: 150px;
@@ -169,12 +172,17 @@ button {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  color: #7191A5;
+
 }
 .mov{
   font-weight: 700;
-  color: #152938;
-  margin-left: 70px;
+  /* color: #152938; */
+  margin-left: 68px;
   margin-top: -30px;
+  color: #304859;
+  font-size: 24px;
+
 }
 #menu-btn-popup{
   visibility: hidden; /* Value should be hidden*/
@@ -239,7 +247,6 @@ button {
 }
 .popup-p{
   font-size: 14px;
-  font-weight: 700;
   line-height: 17.36px;
   color: #7191A5;
 }
@@ -266,7 +273,26 @@ button {
   display: inline-block;
   color: #7191A5;
   font-size: 13px;
-  font-weight: 700;
+  /* display: inline-flex; */
+  justify-content: space-evenly;
+}
+.player1-result, .player2-result, .player3-result, .player4-result{
+  width: 279px;
+  height: 48px;
+  background-color: #DFE7EC;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+.player1-result{
+  margin-bottom: 8px;
+}
+.player1-result .p1, .player2-result .p2, .player3-result .p3, .player4-result .p4{
+  padding-left: 20px;
+  padding-right: 70px;
+  padding-top: 12px;
+  display: inline-block;
+  color: #7191A5;
+  font-size: 13px;
   /* display: inline-flex; */
   justify-content: space-evenly;
 }
@@ -280,8 +306,8 @@ button {
   border-radius: 30px;
   border: 0;
   font-size: 18px;
-  font-weight: 700;
   line-height: 22.32px;
+  font-weight: 700;
 }
 #restart-btn{
   background-color: #FDA214;
@@ -292,4 +318,60 @@ button {
   background-color: #DFE7EC;
   color: #304859;
   /* font-size: 18px; */
+}
+#multiplayer-2{
+  width: 327px;
+  height: 78px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 94px;
+}
+#player-1, #player-2{
+  font-size: 15px;
+  width: 64px;
+  height: 70px;
+  background-color: #DFE7EC;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.p1-label, .p2-label{
+  color: #7191A5;
+}
+.p1-moves, .p2-moves{
+  margin-top: 4px;
+  color: #304859;
+  font-size: 24px;
+}
+.player-active, .player-active-1{
+  background: #FDA214 !important;
+}
+#multiplayer-3{
+  width: 327px;
+  height: 78px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 94px;
+}
+#player-01, #player-02, #player-03{
+  font-size: 15px;
+  width: 64px;
+  height: 70px;
+  background-color: #DFE7EC;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.p01-label, .p02-label, .p03-label{
+  color: #7191A5;
+}
+.p01-moves, .p02-moves, .p03-moves{
+  color: #304859;
+  font-size: 24px;
 }
