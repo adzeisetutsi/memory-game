@@ -375,3 +375,29 @@ button {
   color: #304859;
   font-size: 24px;
 }
+#multiplayer-4{
+  width: 327px;
+  height: 78px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 94px;
+}
+#player-001, #player-002, #player-003, #player-004{
+  font-size: 15px;
+  width: 64px;
+  height: 70px;
+  background-color: #DFE7EC;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.p001-label, .p002-label, .p003-label, .p004-label{
+  color: #7191A5;
+}
+.p001-moves, .p002-moves, .p003-moves, .p004-moves{
+  color: #304859;
+  font-size: 24px;
+}

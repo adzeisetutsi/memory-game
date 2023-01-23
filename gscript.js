@@ -88,17 +88,23 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector(".stats").style.opacity = 1;
             document.querySelector("#multiplayer-2").remove();
             document.querySelector("#multiplayer-3").remove();
-            // document.querySelector("#multiplayer-4").remove();
+            document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "2"){
             document.querySelector(".stats").remove();
             document.querySelector("#multiplayer-3").remove();
-
+            document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-4").remove();
                 }
+            else if(players === "4"){
+            document.querySelector(".stats").remove();
+            document.querySelector("#multiplayer-2").remove();
+            document.querySelector("#multiplayer-3").remove();
+            }
     } 
     else if ( theme === "Icons" && grid === "6x6"){
         document.getElementById("theme2").style.opacity = 1;
@@ -109,15 +115,24 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector(".stats").style.opacity = 1;
             document.querySelector("#multiplayer-2").remove();
             document.querySelector("#multiplayer-3").remove();
+            document.querySelector("#multiplayer-4").remove();
+
             }
             else if(players === "2"){
                 document.querySelector(".stats").remove();
-            document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-4").remove();
                 }
+            else if(players === "4"){
+                document.querySelector(".stats").remove();
+                document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-3").remove();
+            }
     } 
     else if ( theme === "Numbers" && grid === "4x4"){
         document.getElementById("theme3").style.opacity = 1;
@@ -128,15 +143,23 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector(".stats").style.opacity = 1;
             document.querySelector("#multiplayer-2").remove();
             document.querySelector("#multiplayer-3").remove();
+            document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "2"){
                 document.querySelector(".stats").remove();
-            document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-4").remove();
                 }
+            else if(players === "4"){
+                document.querySelector(".stats").remove();
+                document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-3").remove();
+            }
     } 
     else if ( theme === "Numbers" && grid === "6x6") {
         document.getElementById("theme4").style.opacity = 1;
@@ -147,14 +170,22 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector(".stats").style.opacity = 1;
             document.querySelector("#multiplayer-2").remove();
             document.querySelector("#multiplayer-3").remove();
+            document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "2"){
                 document.querySelector(".stats").remove();
-            document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-4").remove();
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-4").remove();
+                }
+            else if(players === "4"){
+                document.querySelector(".stats").remove();
+                document.querySelector("#multiplayer-2").remove();
+                document.querySelector("#multiplayer-3").remove();
                 }
     } 
     else {
@@ -218,6 +249,8 @@ const displayResults = () => {
             player1Result.innerHTML += " (Winner!)" + " "+ batch1PlayerMoves[0] + " Pairs"
             player1Result.style.color = "#FCFCFC"
             player1Result.style.background = "#152938";
+            player2Result.style.color = "#152938";
+            player2Result.innerHTML += batch1PlayerMoves[1] + " Pairs"
         }
         else if(batch1PlayerMoves[0] < batch1PlayerMoves[1]){
             // console.log("player 2")
@@ -225,6 +258,8 @@ const displayResults = () => {
             player2Result.innerHTML += " (Winner!)" + " "+ batch1PlayerMoves[1] + " Pairs"
             player2Result.style.color = "#FCFCFC"
             player2Result.style.background = "#152938";
+            player1Result.style.color = "#152938";
+            player1Result.innerHTML += batch1PlayerMoves[0] + " Pairs"
         }
         else{
         // console.log("Draw")
