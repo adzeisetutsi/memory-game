@@ -333,6 +333,7 @@ button {
   font-size: 15px;
   width: 64px;
   height: 70px;
+  border-radius: 5px;
   background-color: #DFE7EC;
   display: grid;
   place-items: center;
@@ -346,8 +347,21 @@ button {
   color: #304859;
   font-size: 24px;
 }
-.player-active, .player-active-1{
+.player-active, .player-active-1, .player-active-11{
   background: #FDA214 !important;
+  
+}
+.player-active::after, .player-active-1::after, .player-active-11::before{
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  position: fixed;
+  /* bottom:  40px; */
+  margin-bottom: 0;
+  bottom: 160px;
+  border: 20px solid transparent;
+  border-bottom: 20px solid #FDA214;
 }
 #multiplayer-3{
   width: 327px;
@@ -361,6 +375,7 @@ button {
 }
 #player-01, #player-02, #player-03{
   font-size: 15px;
+  border-radius: 5px;
   width: 64px;
   height: 70px;
   background-color: #DFE7EC;
@@ -388,6 +403,7 @@ button {
 #player-001, #player-002, #player-003, #player-004{
   font-size: 15px;
   width: 64px;
+  border-radius: 5px;
   height: 70px;
   background-color: #DFE7EC;
   display: grid;

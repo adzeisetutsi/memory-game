@@ -16,6 +16,10 @@ let batch2Index = [1,2,3];
 let batch2ActivePlayer = 0;
 let batch2PlayerMoves = [0,0,0];
 
+let batch3Index = [1,2,3,4];
+let batch3ActivePlayer = 0;
+let batch3PlayerMoves = [0,0,0,0];
+
 
 
 
@@ -94,16 +98,21 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector(".stats").remove();
             document.querySelector("#multiplayer-3").remove();
             document.querySelector("#multiplayer-4").remove();
+            document.querySelector("#multiplayer-2").style.position = "relative";
+            document.querySelector("#multiplayer-2").style.bottom = "40px";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
-                document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-4").remove();document.querySelector("#multiplayer-3").style.position = "relative";
+                document.querySelector("#multiplayer-3").style.bottom = "44px";
                 }
             else if(players === "4"){
             document.querySelector(".stats").remove();
             document.querySelector("#multiplayer-2").remove();
             document.querySelector("#multiplayer-3").remove();
+            document.querySelector("#multiplayer-4").style.position = "relative";
+            document.querySelector("#multiplayer-4").style.bottom = "44px";
             }
     } 
     else if ( theme === "Icons" && grid === "6x6"){
@@ -122,16 +131,23 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-2").style.position = "relative";
+                document.querySelector("#multiplayer-2").style.top = "8px";
+            
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-3").style.position = "relative";
+                document.querySelector("#multiplayer-3").style.bottom = "-3px";
                 }
             else if(players === "4"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-4").style.position = "relative";
+                document.querySelector("#multiplayer-4").style.bottom = "-5px";
             }
     } 
     else if ( theme === "Numbers" && grid === "4x4"){
@@ -149,16 +165,22 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-2").style.position = "relative";
+            document.querySelector("#multiplayer-2").style.bottom = "24px";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-3").style.position = "relative";
+            document.querySelector("#multiplayer-3").style.bottom = "28px";
                 }
             else if(players === "4"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-4").style.position = "relative";
+                document.querySelector("#multiplayer-4").style.bottom = "30px";
             }
     } 
     else if ( theme === "Numbers" && grid === "6x6") {
@@ -176,16 +198,22 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-2").style.position = "relative";
+            document.querySelector("#multiplayer-2").style.bottom = "-9px";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-4").remove();
+                document.querySelector("#multiplayer-3").style.position = "relative";
+                document.querySelector("#multiplayer-3").style.bottom = "-4px";
                 }
             else if(players === "4"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-3").remove();
+                document.querySelector("#multiplayer-4").style.position = "relative";
+                document.querySelector("#multiplayer-4").style.bottom = "-5px";
                 }
     } 
     else {
@@ -223,6 +251,10 @@ const displayResults = () => {
         popup.style.top = "130px";
         document.body.style.background = "rgba(0,0,0,0.6)";
         soloMovesTaken.innerHTML+=  soloMoves + " " + "Moves";
+        soloMovesTaken.style.position = "relative";
+        soloMovesTaken.style.bottom = "-60px"
+        elapsedTime.style.position = "relative";
+        elapsedTime.style.bottom = "-60px"
         elapsedTime.innerHTML += document.querySelector(".sec").innerHTML;
         player1Result.remove();
         player2Result.remove();
@@ -230,7 +262,7 @@ const displayResults = () => {
         player4Result.remove();
     }
     // Display results for 2 players
-    if(numberOfPlayersParameter === "2"){
+    else if(numberOfPlayersParameter === "2"){
         popup.style.visibility = "visible";
         popup.style.transform = "scale(1)";
         popup.style.top = "130px";
@@ -251,6 +283,9 @@ const displayResults = () => {
             player1Result.style.background = "#152938";
             player2Result.style.color = "#152938";
             player2Result.innerHTML += batch1PlayerMoves[1] + " Pairs"
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            
         }
         else if(batch1PlayerMoves[0] < batch1PlayerMoves[1]){
             // console.log("player 2")
@@ -260,6 +295,9 @@ const displayResults = () => {
             player2Result.style.background = "#152938";
             player1Result.style.color = "#152938";
             player1Result.innerHTML += batch1PlayerMoves[0] + " Pairs"
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            
         }
         else{
         // console.log("Draw")
@@ -269,11 +307,14 @@ const displayResults = () => {
             player1Result.style.color = "#FCFCFC"
             player2Result.style.color = "#FCFCFC"
             player1Result.style.background = "#152938";
-            player2Result.style.background = "#152938";
+            player2Result.style.background = "#152938";player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            
+
         }
     }
     // Displaying results for 3 players
-    if(numberOfPlayersParameter === "3"){
+    else if(numberOfPlayersParameter === "3"){
         popup.style.visibility = "visible";
         popup.style.height = "390px";
         popup.style.transform = "scale(1)";
@@ -293,6 +334,7 @@ const displayResults = () => {
         elapsedTime.remove();
         player4Result.remove();
 
+        // Determining the winner
         if(batch2PlayerMoves[0] > batch2PlayerMoves[1] && batch2PlayerMoves[0] > batch2PlayerMoves[2]){
             popupDeclaration.innerHTML = "Player 1 Wins!";
             player1Result.innerHTML += " (Winner!)" + " "+ batch2PlayerMoves[0] + " Pairs"
@@ -302,8 +344,10 @@ const displayResults = () => {
             player3Result.innerHTML +=  batch2PlayerMoves[2] + " Pairs"
             player2Result.style.color = "#152938";
             player3Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
             player2Result.style.fontWeight = "700";
             player3Result.style.fontWeight = "700";
+            
         }
         else if(batch2PlayerMoves[1] > batch2PlayerMoves[0] && batch2PlayerMoves[1] > batch2PlayerMoves[2]){
             popupDeclaration.innerHTML = "Player 2 Wins!";
@@ -315,7 +359,9 @@ const displayResults = () => {
             player1Result.style.color = "#152938";
             player3Result.style.color = "#152938";
             player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
             player3Result.style.fontWeight = "700";
+            
         }
         else if(batch2PlayerMoves[2] > batch2PlayerMoves[0] && batch2PlayerMoves[2] > batch2PlayerMoves[1]){
             popupDeclaration.innerHTML = "Player 3 Wins!";
@@ -328,6 +374,8 @@ const displayResults = () => {
             player2Result.style.color = "#152938";
             player1Result.style.fontWeight = "700";
             player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            
         }
         else if(batch2PlayerMoves[0] === batch2PlayerMoves[1] && batch2PlayerMoves[0] > batch2PlayerMoves[3]){
             popupDeclaration.innerHTML = "It's a tie!"
@@ -338,6 +386,10 @@ const displayResults = () => {
             player1Result.style.background = "#152938";
             player2Result.style.background = "#152938";
             player3Result.innerHTML += batch2PlayerMoves[2] + " Pairs"
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+
         }
         else if(batch2PlayerMoves[0] === batch2PlayerMoves[2] && batch2PlayerMoves[0] > batch2PlayerMoves[1]){
             popupDeclaration.innerHTML = "It's a tie!"
@@ -348,6 +400,10 @@ const displayResults = () => {
             player1Result.style.background = "#152938";
             player3Result.style.background = "#152938";
             player2Result.innerHTML += batch2PlayerMoves[1] + " Pairs"
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+
         }
         else if(batch2PlayerMoves[1] === batch2PlayerMoves[2] && batch2PlayerMoves[1] > batch2PlayerMoves[0]){
             popupDeclaration.innerHTML = "It's a tie!"
@@ -358,6 +414,10 @@ const displayResults = () => {
             player2Result.style.background = "#152938";
             player3Result.style.background = "#152938";
             player1Result.innerHTML += batch2PlayerMoves[0] + " Pairs"
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+
         }
         else{
             popupDeclaration.innerHTML = "It's a tie!"
@@ -370,12 +430,311 @@ const displayResults = () => {
             player1Result.style.background = "#152938";
             player2Result.style.background = "#152938";
             player3Result.style.background = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
 
-
-
-
+            
         }
     }
+    // Display results for 4 players
+    else {
+        popup.style.visibility = "visible";
+        popup.style.height = "440px";
+        popup.style.transform = "scale(1)";
+        popup.style.top = "75px";
+        document.body.style.background = "rgba(0,0,0,0.6)";
+        popupDeclaration.style.position = "absolute";
+        popupDeclaration.style.bottom = "105px";
+        resultSummary.style.position = "relative";
+        resultSummary.style.bottom = "-55px";
+        popupParagraph.style.position = "absolute";
+        popupParagraph.style.bottom = "80px";
+        popupButton.style.position = "relative";
+        popupButton.style.bottom = "-12px";
+        player2Result.style.marginBottom = "11px"
+        player3Result.style.marginBottom = "11px"
+        soloMovesTaken.remove();
+        elapsedTime.remove();
+
+        // Determining the winner
+        if (batch3PlayerMoves[0] > batch3PlayerMoves[1] && batch3PlayerMoves[0] > batch3PlayerMoves[2] && batch3PlayerMoves[0] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "Player 1 Wins!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs"
+            player1Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player2Result.innerHTML += batch3PlayerMoves[1] + " Pairs"
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs"
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs"
+            player2Result.style.color = "#152938";
+            player3Result.style.color = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[1] > batch3PlayerMoves[0] && batch3PlayerMoves[1] > batch3PlayerMoves[2] && batch3PlayerMoves[1] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "Player 2 Wins!";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs"
+            player2Result.style.color = "#FCFCFC";
+            player2Result.style.background = "#152938";
+            player1Result.innerHTML += batch3PlayerMoves[0] + " Pairs"
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs"
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs"
+            player1Result.style.color = "#152938";
+            player3Result.style.color = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[2] > batch3PlayerMoves[0] && batch3PlayerMoves[2] > batch3PlayerMoves[1] && batch3PlayerMoves[2] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "Player 3 Wins!";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs"
+            player3Result.style.color = "#FCFCFC";
+            player3Result.style.background = "#152938";
+            player1Result.innerHTML += batch3PlayerMoves[0] + " Pairs"
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs"
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs"
+            player1Result.style.color = "#152938";
+            player2Result.style.color = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[3] > batch3PlayerMoves[0] && batch3PlayerMoves[3] > batch3PlayerMoves[1] && batch3PlayerMoves[3] > batch3PlayerMoves[2]){
+            popupDeclaration.innerHTML = "Player 4 Wins!";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs"
+            player4Result.style.color = "#FCFCFC";
+            player4Result.style.background = "#152938";
+            player1Result.innerHTML += batch3PlayerMoves[0] + " Pairs"
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs"
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs"
+            player1Result.style.color = "#152938";
+            player2Result.style.color = "#152938";
+            player3Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[0] === batch3PlayerMoves[1] && batch3PlayerMoves[0] > batch3PlayerMoves[2] && batch3PlayerMoves[0] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player2Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player2Result.style.background = "#152938";
+            player3Result.style.color = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[0] === batch3PlayerMoves[2] && batch3PlayerMoves[0] > batch3PlayerMoves[1] && batch3PlayerMoves[0] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs";
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player3Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player3Result.style.background = "#152938";
+            player2Result.style.color = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[0] === batch3PlayerMoves[3] && batch3PlayerMoves[0] > batch3PlayerMoves[1] && batch3PlayerMoves[0] > batch3PlayerMoves[2]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs";
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player2Result.style.color = "#152938";
+            player3Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        } 
+        else if (batch3PlayerMoves[1] === batch3PlayerMoves[2] && batch3PlayerMoves[1] > batch3PlayerMoves[0] && batch3PlayerMoves[1] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player1Result.innerHTML +=  batch3PlayerMoves[0] + " Pairs";
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs";
+            player2Result.style.color = "#FCFCFC";
+            player3Result.style.color = "#FCFCFC";
+            player2Result.style.background = "#152938";
+            player3Result.style.background = "#152938";
+            player1Result.style.color = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[1] === batch3PlayerMoves[3] && batch3PlayerMoves[1] > batch3PlayerMoves[0] && batch3PlayerMoves[1] > batch3PlayerMoves[2]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player1Result.innerHTML +=  batch3PlayerMoves[0] + " Pairs";
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs";
+            player2Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player2Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player1Result.style.color = "#152938";
+            player3Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[2] === batch3PlayerMoves[3] && batch3PlayerMoves[2] > batch3PlayerMoves[0] && batch3PlayerMoves[2] > batch3PlayerMoves[1]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player1Result.innerHTML +=  batch3PlayerMoves[0] + " Pairs";
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs";
+            player3Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player3Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player1Result.style.color = "#152938";
+            player2Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[0] === batch3PlayerMoves[1] && batch3PlayerMoves[0] === batch3PlayerMoves[2] && batch3PlayerMoves[0] > batch3PlayerMoves[3]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML +=  batch3PlayerMoves[3] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player2Result.style.color = "#FCFCFC";
+            player3Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player2Result.style.background = "#152938";
+            player3Result.style.background = "#152938";
+            player4Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[0] === batch3PlayerMoves[1] && batch3PlayerMoves[0] === batch3PlayerMoves[3] && batch3PlayerMoves[0] > batch3PlayerMoves[2]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player3Result.innerHTML +=  batch3PlayerMoves[2] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player2Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player2Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player3Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[0] === batch3PlayerMoves[2] && batch3PlayerMoves[0] === batch3PlayerMoves[3] && batch3PlayerMoves[0] > batch3PlayerMoves[1]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player3Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player3Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player2Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[1] === batch3PlayerMoves[2] && batch3PlayerMoves[1] === batch3PlayerMoves[3] && batch3PlayerMoves[1] > batch3PlayerMoves[0]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player1Result.innerHTML +=  batch3PlayerMoves[0] + " Pairs";
+            player2Result.style.color = "#FCFCFC";
+            player3Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player2Result.style.background = "#152938";
+            player3Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player1Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else if (batch3PlayerMoves[2] === batch3PlayerMoves[3] && batch3PlayerMoves[2] === batch3PlayerMoves[0] && batch3PlayerMoves[2] > batch3PlayerMoves[1]){
+            popupDeclaration.innerHTML = "It's a tie!";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player2Result.innerHTML +=  batch3PlayerMoves[1] + " Pairs";
+            player3Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player1Result.style.color = "#FCFCFC";
+            player3Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player1Result.style.background = "#152938";
+            player2Result.style.color = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+        else{
+            popupDeclaration.innerHTML = "It's a tie!";
+            player1Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[0] + " Pairs";
+            player2Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[1] + " Pairs";
+            player3Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[2] + " Pairs";
+            player4Result.innerHTML += " (Winner!)" + " "+ batch3PlayerMoves[3] + " Pairs";
+            player1Result.style.color = "#FCFCFC";
+            player2Result.style.color = "#FCFCFC";
+            player3Result.style.color = "#FCFCFC";
+            player4Result.style.color = "#FCFCFC";
+            player1Result.style.background = "#152938";
+            player2Result.style.background = "#152938";
+            player3Result.style.background = "#152938";
+            player4Result.style.background = "#152938";
+            player1Result.style.fontWeight = "700";
+            player2Result.style.fontWeight = "700";
+            player3Result.style.fontWeight = "700";
+            player4Result.style.fontWeight = "700";
+        }
+    }
+    
     
 }
 
@@ -409,6 +768,12 @@ const logicFunction = (a) => {
             let player02 = document.querySelector(".player-02");
             let player03 = document.querySelector(".player-03");
 
+            // Selecting active players for 3 players
+            let player001 = document.querySelector(".player-001");
+            let player002 = document.querySelector(".player-002");
+            let player003 = document.querySelector(".player-003");
+            let player004 = document.querySelector(".player-004");
+
 
             if(firstSelection === secondSelection){
                 const correctIcons = document.querySelectorAll(".icon[icon='" + firstSelection + "']");
@@ -425,6 +790,11 @@ const logicFunction = (a) => {
                     document.querySelector(`.p0${batch2Index[batch2ActivePlayer]}-moves`).innerHTML = batch2PlayerMoves[batch2ActivePlayer];
                 }
                 
+                // Switching the active player in Multiplayer 4
+                if(numberOfPlayersParameter === "4"){
+                    batch3PlayerMoves[batch3ActivePlayer]++;
+                    document.querySelector(`.p00${batch3Index[batch3ActivePlayer]}-moves`).innerHTML = batch3PlayerMoves[batch3ActivePlayer];
+                }
 
 
 
@@ -474,6 +844,17 @@ const logicFunction = (a) => {
                     }
                 }
 
+                 // Display results for 4 players
+                if(numberOfPlayersParameter === "4"){
+                    soloPairs++;
+                    if(soloPairs === 8 && gridSizeParameter === "4x4"){
+                        displayResults();
+                    }
+                    else if (soloPairs === 18 && gridSizeParameter === "6x6"){
+                        displayResults();
+                    }
+                }
+
 
             } else {
                 
@@ -503,6 +884,30 @@ const logicFunction = (a) => {
                         player01.classList.toggle("player-active-1");
                     }
                 }
+
+                 // Switching the active player in Multiplayer 4
+                if(numberOfPlayersParameter === "4"){
+                    batch3ActivePlayer = (batch3ActivePlayer === 0) ? 1 : (batch3ActivePlayer === 1) ? 2 : (batch3ActivePlayer === 2) ? 3 : 0
+                    // Visual toggling the active players
+                    if(batch3ActivePlayer === 1){
+                        player001.classList.toggle("player-active-11");
+                        player002.classList.toggle("player-active-11");
+                    }
+                    else if(batch3ActivePlayer === 2){
+                    player002.classList.toggle("player-active-11");
+                    player003.classList.toggle("player-active-11");
+                    }
+                    else if(batch3ActivePlayer === 3){
+                        player003.classList.toggle("player-active-11");
+                        player004.classList.toggle("player-active-11");
+                    }
+                    else {
+                        player004.classList.toggle("player-active-11");
+                        player001.classList.toggle("player-active-11");
+                    }
+                }
+
+
 
                 
                 incorrectIcons[0].classList.add("incorrect");
