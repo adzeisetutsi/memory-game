@@ -943,6 +943,7 @@ logicFunction("#icons4 .icon")
 // Restarting the game
 let restartGameEnd = document.querySelector("#restart-btn");
 let restartGameMenu = document.getElementById("menu-restart-btn");
+let desktopTabletRestartBtn = document.querySelector("#desktop-tablet-restart-btn");
 
 const restartGameFunc = () => {
     const parameterObj = {
@@ -956,18 +957,20 @@ const restartGameFunc = () => {
 }
 restartGameEnd.addEventListener("click", restartGameFunc);
 restartGameMenu.addEventListener("click", restartGameFunc);
-
+desktopTabletRestartBtn.addEventListener("click", restartGameFunc);
 
 
 // Setting up new a game
 let setUpNewGameEnd = document.querySelector("#setup-new-game-btn");
 let setUpNewGameMenu = document.getElementById("menu-new-game-btn");
+let desktopTabletNewGameBtn = document.querySelector("#desktop-tablet-new-game-btn")
 
 const setUpNewGameFunc = () => {
     window.location.href = './index.html';
 }
-setUpNewGameEnd.addEventListener("click", setUpNewGameFunc)
-setUpNewGameMenu.addEventListener("click", setUpNewGameFunc)
+setUpNewGameEnd.addEventListener("click", setUpNewGameFunc);
+setUpNewGameMenu.addEventListener("click", setUpNewGameFunc);
+desktopTabletNewGameBtn.addEventListener("click", setUpNewGameFunc);
 
 // Resuming the game
 let resumeGame = document.getElementById("menu-resume-game-btn");
