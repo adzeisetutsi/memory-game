@@ -285,7 +285,16 @@ let player2Result = document.querySelector(".player2-result");
 let player3Result = document.querySelector(".player3-result");
 let player4Result = document.querySelector(".player4-result");
 let popupButton = document.querySelector(".popup-btn");
-
+let header = document.querySelector("#header");
+let menuBtn = document.querySelector("#menu-btn-popup");
+let theme = document.querySelector("#theme");
+let theme2 = document.querySelector("#theme2");
+let theme3 = document.querySelector("#theme3");
+let theme4 = document.querySelector("#theme4");
+let stats = document.querySelector(".stats");
+let mul2 = document.querySelector("#multiplayer-2");
+let mul3 = document.querySelector("#multiplayer-3");
+let mul4 = document.querySelector("#multiplayer-4");
 
 
 // Function to display the results
@@ -297,7 +306,17 @@ const displayResults = () => {
         popup.style.background = "#F2F2F2";
         popup.style.top = "130px";
         // popup.body.style.userSelect = "all";
-
+        header.style.filter = "blur(2px)";
+        menuBtn.style.filter = "blur(2px)";
+        theme.style.filter = "blur(2px)";
+        theme2.style.filter = "blur(2px)";
+        theme3.style.filter = "blur(2px)";
+        theme4.style.filter = "blur(2px)";
+        stats.style.filter = "blur(2px)";
+        mul2.style.filter = "blur(2px)";
+        mul3.style.filter = "blur(2px)";
+        mul4.style.filter = "blur(2px)";
+        // header.style.background = "rgba( 0, 0, 0.2)";
         document.body.style.userSelect = "none";
         document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
         document.querySelector("#desktop-tablet-new-game-btn").style.pointerEvents = "none";
@@ -321,6 +340,16 @@ const displayResults = () => {
         popup.style.visibility = "visible";
         popup.style.transform = "scale(1)";
         popup.style.top = "130px";
+        header.style.filter = "blur(2px)";
+        menuBtn.style.filter = "blur(2px)";
+        theme.style.filter = "blur(2px)";
+        theme2.style.filter = "blur(2px)";
+        theme3.style.filter = "blur(2px)";
+        theme4.style.filter = "blur(2px)";
+        stats.style.filter = "blur(2px)";
+        mul2.style.filter = "blur(2px)";
+        mul3.style.filter = "blur(2px)";
+        mul4.style.filter = "blur(2px)";
         document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
         document.querySelector("#desktop-tablet-new-game-btn").style.pointerEvents = "none";
         document.querySelector("#menu-btn").style.pointerEvents = "none";
@@ -376,6 +405,16 @@ const displayResults = () => {
         popup.style.height = "390px";
         popup.style.transform = "scale(1)";
         popup.style.top = "130px";
+        header.style.filter = "blur(2px)";
+        menuBtn.style.filter = "blur(2px)";
+        theme.style.filter = "blur(2px)";
+        theme2.style.filter = "blur(2px)";
+        theme3.style.filter = "blur(2px)";
+        theme4.style.filter = "blur(2px)";
+        stats.style.filter = "blur(2px)";
+        mul2.style.filter = "blur(2px)";
+        mul3.style.filter = "blur(2px)";
+        mul4.style.filter = "blur(2px)";
         // document.body.style.background = "rgba(0,0,0,0.6)";
         document.body.style.userSelect = "none";
         document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
@@ -504,6 +543,16 @@ const displayResults = () => {
         popup.style.height = "440px";
         popup.style.transform = "scale(1)";
         popup.style.top = "75px";
+        header.style.filter = "blur(2px)";
+        menuBtn.style.filter = "blur(2px)";
+        theme.style.filter = "blur(2px)";
+        theme2.style.filter = "blur(2px)";
+        theme3.style.filter = "blur(2px)";
+        theme4.style.filter = "blur(2px)";
+        stats.style.filter = "blur(2px)";
+        mul2.style.filter = "blur(2px)";
+        mul3.style.filter = "blur(2px)";
+        mul4.style.filter = "blur(2px)";
         document.body.style.background = "rgba(0,0,0,0.6)";
         document.body.style.userSelect = "none";
         document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
