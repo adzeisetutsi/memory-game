@@ -20,6 +20,20 @@ let batch3Index = [1,2,3,4];
 let batch3ActivePlayer = 0;
 let batch3PlayerMoves = [0,0,0,0];
 
+let currentTurn1 = document.querySelector(".current-turn1");
+let currentTurn2 = document.querySelector(".current-turn2");
+
+
+let currentTurn01 = document.querySelector(".current-turn01");
+let currentTurn02 = document.querySelector(".current-turn02");
+let currentTurn03 = document.querySelector(".current-turn03");
+let currentTurn04 = document.querySelector(".current-turn04");
+
+let currentTurn001 = document.querySelector(".current-turn001");
+let currentTurn002 = document.querySelector(".current-turn002");
+let currentTurn003 = document.querySelector(".current-turn003");
+let currentTurn004 = document.querySelector(".current-turn004");
+
 
 
 
@@ -100,12 +114,16 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector("#multiplayer-4").remove();
             document.querySelector("#multiplayer-2").style.position = "relative";
             document.querySelector("#multiplayer-2").style.bottom = "40px";
+            currentTurn2.style.visibility = "hidden";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-4").remove();document.querySelector("#multiplayer-3").style.position = "relative";
                 document.querySelector("#multiplayer-3").style.bottom = "44px";
+                currentTurn02.style.visibility = "hidden";
+                currentTurn03.style.visibility = "hidden";
+                
                 }
             else if(players === "4"){
             document.querySelector(".stats").remove();
@@ -113,6 +131,11 @@ const loadIcon4x4 = (theme,grid,players) => {
             document.querySelector("#multiplayer-3").remove();
             document.querySelector("#multiplayer-4").style.position = "relative";
             document.querySelector("#multiplayer-4").style.bottom = "44px";
+            currentTurn002.style.visibility = "hidden";
+            currentTurn003.style.visibility = "hidden";
+            currentTurn004.style.visibility = "hidden";
+
+            
             }
     } 
     else if ( theme === "Icons" && grid === "6x6"){
@@ -133,7 +156,7 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-4").remove();
                 document.querySelector("#multiplayer-2").style.position = "relative";
                 document.querySelector("#multiplayer-2").style.top = "8px";
-            
+                currentTurn2.style.visibility = "hidden";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
@@ -141,6 +164,10 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-4").remove();
                 document.querySelector("#multiplayer-3").style.position = "relative";
                 document.querySelector("#multiplayer-3").style.bottom = "-3px";
+                currentTurn02.style.visibility = "hidden";
+                currentTurn03.style.visibility = "hidden";
+                
+
                 }
             else if(players === "4"){
                 document.querySelector(".stats").remove();
@@ -148,6 +175,10 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").style.position = "relative";
                 document.querySelector("#multiplayer-4").style.bottom = "-5px";
+                currentTurn002.style.visibility = "hidden";
+                currentTurn003.style.visibility = "hidden";
+                currentTurn004.style.visibility = "hidden";
+                
             }
     } 
     else if ( theme === "Numbers" && grid === "4x4"){
@@ -166,14 +197,18 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").remove();
                 document.querySelector("#multiplayer-2").style.position = "relative";
-            document.querySelector("#multiplayer-2").style.bottom = "24px";
+                document.querySelector("#multiplayer-2").style.bottom = "24px";
+                currentTurn2.style.visibility = "hidden";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
                 document.querySelector("#multiplayer-2").remove();
                 document.querySelector("#multiplayer-4").remove();
                 document.querySelector("#multiplayer-3").style.position = "relative";
-            document.querySelector("#multiplayer-3").style.bottom = "28px";
+                document.querySelector("#multiplayer-3").style.bottom = "28px";
+                currentTurn02.style.visibility = "hidden";
+                currentTurn03.style.visibility = "hidden";
+                
                 }
             else if(players === "4"){
                 document.querySelector(".stats").remove();
@@ -181,6 +216,10 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").style.position = "relative";
                 document.querySelector("#multiplayer-4").style.bottom = "30px";
+                currentTurn002.style.visibility = "hidden";
+                currentTurn003.style.visibility = "hidden";
+                currentTurn004.style.visibility = "hidden";
+                
             }
     } 
     else if ( theme === "Numbers" && grid === "6x6") {
@@ -199,7 +238,8 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").remove();
                 document.querySelector("#multiplayer-2").style.position = "relative";
-            document.querySelector("#multiplayer-2").style.bottom = "-9px";
+                document.querySelector("#multiplayer-2").style.bottom = "-9px";
+                currentTurn2.style.visibility = "hidden";
             }
             else if(players === "3"){
                 document.querySelector(".stats").remove();
@@ -207,6 +247,9 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-4").remove();
                 document.querySelector("#multiplayer-3").style.position = "relative";
                 document.querySelector("#multiplayer-3").style.bottom = "-4px";
+                currentTurn02.style.visibility = "hidden";
+                currentTurn03.style.visibility = "hidden";
+
                 }
             else if(players === "4"){
                 document.querySelector(".stats").remove();
@@ -214,6 +257,9 @@ const loadIcon4x4 = (theme,grid,players) => {
                 document.querySelector("#multiplayer-3").remove();
                 document.querySelector("#multiplayer-4").style.position = "relative";
                 document.querySelector("#multiplayer-4").style.bottom = "-5px";
+                currentTurn002.style.visibility = "hidden";
+                currentTurn003.style.visibility = "hidden";
+                currentTurn004.style.visibility = "hidden";
                 }
     } 
     else {
@@ -248,8 +294,17 @@ const displayResults = () => {
     if(numberOfPlayersParameter === "1"){
         popup.style.visibility = "visible";
         popup.style.transform = "scale(1)";
+        popup.style.background = "#F2F2F2";
         popup.style.top = "130px";
-        document.body.style.background = "rgba(0,0,0,0.6)";
+        // popup.body.style.userSelect = "all";
+
+        document.body.style.userSelect = "none";
+        document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
+        document.querySelector("#desktop-tablet-new-game-btn").style.pointerEvents = "none";
+        document.querySelector("#menu-btn").style.pointerEvents = "none";
+        // document.head.style.filter = "blur(20px)";
+        // document.style.backdropFilter = "blur(10px)";
+        popup.style.backdropFilter = "blur(10px)";
         soloMovesTaken.innerHTML+=  soloMoves + " " + "Moves";
         soloMovesTaken.style.position = "relative";
         soloMovesTaken.style.bottom = "-60px"
@@ -266,7 +321,9 @@ const displayResults = () => {
         popup.style.visibility = "visible";
         popup.style.transform = "scale(1)";
         popup.style.top = "130px";
-        document.body.style.background = "rgba(0,0,0,0.6)";
+        document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
+        document.querySelector("#desktop-tablet-new-game-btn").style.pointerEvents = "none";
+        document.querySelector("#menu-btn").style.pointerEvents = "none";
         resultSummary.style.position = "relative";
         resultSummary.style.top = "60px";
         soloMovesTaken.remove();
@@ -278,7 +335,7 @@ const displayResults = () => {
         if(batch1PlayerMoves[0] > batch1PlayerMoves[1]){
             // console.log("Player 1")
             popupDeclaration.innerHTML = "Player 1 Wins!"
-            player1Result.innerHTML += " (Winner!)" + " "+ batch1PlayerMoves[0] + " Pairs"
+            player1Result.innerHTML += " (Winner!)           " + batch1PlayerMoves[0] + " Pairs"
             player1Result.style.color = "#FCFCFC"
             player1Result.style.background = "#152938";
             player2Result.style.color = "#152938";
@@ -319,7 +376,11 @@ const displayResults = () => {
         popup.style.height = "390px";
         popup.style.transform = "scale(1)";
         popup.style.top = "130px";
-        document.body.style.background = "rgba(0,0,0,0.6)";
+        // document.body.style.background = "rgba(0,0,0,0.6)";
+        document.body.style.userSelect = "none";
+        document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
+        document.querySelector("#desktop-tablet-new-game-btn").style.pointerEvents = "none";
+        document.querySelector("#menu-btn").style.pointerEvents = "none";
         popupDeclaration.style.position = "absolute";
         popupDeclaration.style.bottom = "55px";
         popupParagraph.style.position = "absolute";
@@ -444,6 +505,10 @@ const displayResults = () => {
         popup.style.transform = "scale(1)";
         popup.style.top = "75px";
         document.body.style.background = "rgba(0,0,0,0.6)";
+        document.body.style.userSelect = "none";
+        document.querySelector("#desktop-tablet-restart-btn").style.pointerEvents = "none";
+        document.querySelector("#desktop-tablet-new-game-btn").style.pointerEvents = "none";
+        document.querySelector("#menu-btn").style.pointerEvents = "none";
         popupDeclaration.style.position = "absolute";
         popupDeclaration.style.bottom = "105px";
         resultSummary.style.position = "relative";
@@ -768,11 +833,12 @@ const logicFunction = (a) => {
             let player02 = document.querySelector(".player-02");
             let player03 = document.querySelector(".player-03");
 
-            // Selecting active players for 3 players
+            // Selecting active players for 4 players
             let player001 = document.querySelector(".player-001");
             let player002 = document.querySelector(".player-002");
             let player003 = document.querySelector(".player-003");
             let player004 = document.querySelector(".player-004");
+            
 
 
             if(firstSelection === secondSelection){
@@ -794,9 +860,8 @@ const logicFunction = (a) => {
                 if(numberOfPlayersParameter === "4"){
                     batch3PlayerMoves[batch3ActivePlayer]++;
                     document.querySelector(`.p00${batch3Index[batch3ActivePlayer]}-moves`).innerHTML = batch3PlayerMoves[batch3ActivePlayer];
+                    
                 }
-
-
 
                 correctIcons[0].classList.add("correct");
                 correctIcons[0].classList.remove("clicked");
@@ -863,8 +928,20 @@ const logicFunction = (a) => {
                 // Switching the active player in Multiplayer 2
                 if(numberOfPlayersParameter === "2"){
                     batch1ActivePlayer = (batch1ActivePlayer === 0) ? 1 : 0;
-                    player1.classList.toggle("player-active");
-                    player2.classList.toggle("player-active");
+                    // Visual toggling the active players
+                    if (batch1ActivePlayer === 1){
+                        player1.classList.toggle("player-active");
+                        player2.classList.toggle("player-active");
+                        currentTurn2.style.visibility = "visible";
+                        currentTurn1.style.visibility = "hidden";
+                    }
+                    else{
+                        player2.classList.toggle("player-active");
+                        player1.classList.toggle("player-active");
+                        currentTurn1.style.visibility = "visible";
+                        currentTurn2.style.visibility = "hidden";
+                    }
+                    
                 }
                 
                 // Switching the active player in Multiplayer 3
@@ -874,36 +951,54 @@ const logicFunction = (a) => {
                     if(batch2ActivePlayer === 1){
                         player01.classList.toggle("player-active-1");
                         player02.classList.toggle("player-active-1");
+                        currentTurn01.style.visibility = "hidden";
+                        currentTurn02.style.visibility = "visible";
                     }
                     else if(batch2ActivePlayer === 2){
                     player02.classList.toggle("player-active-1");
                     player03.classList.toggle("player-active-1");
+                    currentTurn02.style.visibility = "hidden";
+                    currentTurn03.style.visibility = "visible";
                     }
                     else if(batch2ActivePlayer === 0){
                         player03.classList.toggle("player-active-1");
                         player01.classList.toggle("player-active-1");
+                        currentTurn01.style.visibility = "visible";
+                        currentTurn03.style.visibility = "hidden";
                     }
                 }
 
                  // Switching the active player in Multiplayer 4
                 if(numberOfPlayersParameter === "4"){
-                    batch3ActivePlayer = (batch3ActivePlayer === 0) ? 1 : (batch3ActivePlayer === 1) ? 2 : (batch3ActivePlayer === 2) ? 3 : 0
+                    batch3ActivePlayer = (batch3ActivePlayer === 0) ? 1 : (batch3ActivePlayer === 1) ? 2 : (batch3ActivePlayer === 2) ? 3 : 0;
+
                     // Visual toggling the active players
                     if(batch3ActivePlayer === 1){
                         player001.classList.toggle("player-active-11");
                         player002.classList.toggle("player-active-11");
+                        currentTurn001.style.visibility = "hidden";
+                        currentTurn002.style.visibility = "visible";
+                        
                     }
                     else if(batch3ActivePlayer === 2){
                     player002.classList.toggle("player-active-11");
                     player003.classList.toggle("player-active-11");
+                    currentTurn002.style.visibility = "hidden";
+                    currentTurn003.style.visibility = "visible";
+                    
                     }
                     else if(batch3ActivePlayer === 3){
                         player003.classList.toggle("player-active-11");
                         player004.classList.toggle("player-active-11");
+                    currentTurn003.style.visibility = "hidden";
+                    currentTurn004.style.visibility = "visible";
                     }
                     else {
                         player004.classList.toggle("player-active-11");
                         player001.classList.toggle("player-active-11");
+                        currentTurn001.style.visibility = "visible";
+                        currentTurn004.style.visibility = "hidden";
+
                     }
                 }
 

@@ -282,5 +282,7 @@ body {
   }
   #start-game-btn:hover {
     filter: invert(0.06);
+    cursor: pointer;
+
   }
 }

@@ -83,7 +83,7 @@ button {
   color: #fcfcfc;
 }
 .icon.clicked {
-  background-color: #bcced9;
+  background-color: #fda214;
 }
 .icon.correct {
   background-color: #bcced9;
@@ -109,7 +109,7 @@ button {
   row-gap: 0.2em;
 }
 
-/* TODO: Remeber, this is responsible for responsiveness  */
+
 #icons2 .icon {
   width: 40px;
   height: 40px;
@@ -247,7 +247,7 @@ button {
   margin-left: auto;
   margin-right: auto;
   position: absolute;
-  top: -190px;
+  /* top: -190px; */
   right: 25px;
   transform: scale(0.1);
   display: grid;
@@ -255,6 +255,7 @@ button {
   border-radius: 15px;
   bottom: 170px;
   transition: transform 0.4s, bottom 0.4s;
+  z-index: 100;
 }
 .popup-info {
   width: 238px;
@@ -274,10 +275,11 @@ button {
   line-height: 17.36px;
   color: #7191a5;
 }
-.solo-result {
+.result-summary {
   width: 279px;
   height: 104px;
-  margin-top: 80px;
+  /* margin-top: 0px; */
+  
 }
 .time-elapsed,
 .moves-taken {
@@ -290,6 +292,7 @@ button {
 }
 .time-elapsed {
   margin-bottom: 8px;
+  margin-left: 0;
 }
 .time-elapsed .t,
 .moves-taken .m {
@@ -357,10 +360,12 @@ button {
   height: 78px;
   display: flex;
   justify-content: space-evenly;
+  position: absolute;
   align-items: baseline;
   margin-left: auto;
   margin-right: auto;
   margin-top: 94px;
+  z-index: 0;
 }
 #player-1,
 #player-2, 
@@ -400,7 +405,7 @@ button {
 .player-active,
 .player-active-1,
 .player-active-11 {
-  color: #FCFCFC !important;
+  /* color: #FCFCFC !important; */
   background: #fda214 !important;
 }
 .player-active::after,
@@ -416,6 +421,7 @@ button {
   bottom: 160px;
   border: 20px solid transparent;
   border-bottom: 20px solid #fda214;
+  z-index: 1;
 }
 
 .p01-moves,
@@ -432,6 +438,19 @@ button {
   font-size: 24px;
 }
 
+.current-turn1, .current-turn2{
+  position: absolute;
+  bottom: 920px;
+}
+.current-turn01, .current-turn02, .current-turn03{
+  position: absolute;
+  bottom: 920px;
+}
+.current-turn001, .current-turn002, .current-turn003, .current-turn004{
+  position: absolute;
+  bottom: 920px;
+}
+
 @media (min-width: 768px) {
   #header {
     width: 689px;
@@ -443,6 +462,7 @@ button {
   #icons1,#icons3{
     width: 532px;
   }
+  
   #icons1 .icon, #icons3 .icon{
     width: 118px;
     height: 118px;
@@ -465,7 +485,6 @@ button {
   #timer-div, #moves-div{
     width: 255px;
     height: 72px;
-    display: flex;
     display: flex;
   }
   .timer, .moves{
@@ -604,7 +623,182 @@ button {
   left: 0px;
   content: "Player 4";
 }
+#popup{
+  width: 654px;
+  /* height: 500px; */
+  position: absolute;
+  top: 200px !important;
+  right: 60px;
 
 }
+.popup-btn{
+  height: 11px;
+}
+.result-summary{
+  width: 542px;
+  /* height: 160px; */
+}
+.time-elapsed,
+.moves-taken{
+  width: 542px;
+  height: 72px;
+  position: relative;
+  top: 50px !important;
+}
+.time-elapsed{
+  margin-bottom: 10px;
+}
+.time-elapsed .t,
+.moves-taken .m {
+  padding-right: 280px;
+  font-size: 18px;
+  padding-top: 25px;
+}
+.player1-result,
+.player2-result,
+.player3-result,
+.player4-result{
+  width: 542px;
+  height: 55px;
+  position: relative;
+  bottom: 25px;
+}
 
+#restart-btn{
+  position: relative;
+  right: 130px;
+  top: 10px;
+  width: 264px;
+}
+#setup-new-game-btn{
+  position: relative;
+  left: 150px;
+  bottom: 53px;
+  width: 264px;
+}
+.popup-info{
+  width: 234px;
+  height: 60px;
+  justify-content: center;
 
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  
+}
+.popup-info h3{
+  font-size: 38px;
+  width: 334px;
+  margin-left: 70px;
+  /* justify-content: center; */
+}
+.popup-p{
+  font-size: 18px;
+  /* position: relative; */
+  /* right: 50px; */
+  width: 286px;
+}
+}
+
+@media(min-width: 1000px){
+  #header{
+    width: 1110px;
+  }
+  #icons1 .icon, #icons3 .icon{
+    width: 80px;
+    height: 70px;
+    font-size: 1rem;
+  }
+  #icons2 .icon, #icons4 .icon{
+    width: 60px;
+    height: 50px;
+    font-size: 2rem;
+  }
+  #icons2,#icons4{
+    width: 572px;
+    
+  }
+  .stats{
+    width: 1110px;
+    height: 130px;
+  }
+  #timer-div{
+    position: relative;
+    left: 80px;
+  }
+  #moves-div{
+    position: relative;
+    right: 110px;
+  }
+  #multiplayer-2, #multiplayer-3, #multiplayer-4{
+    width: 1110px;
+    height: 130px;
+    position: absolute;
+    top: -20px;
+  }
+  .stats{
+    position: absolute;
+    bottom: 20px;
+    left: 110px;
+    
+  }
+  
+  #player-1,
+  #player-01, 
+  #player-02, 
+  #player-03, 
+  #player-001, 
+  #player-002, 
+  #player-003, 
+  #player-2, 
+  #player-004{
+  width: 255px;
+  height: 72px;
+  /* display: flex; */
+  }
+  .p1-moves, .p2-moves,.p01-moves,.p02-moves, .p03-moves, .p001-moves, .p002-moves, .p003-moves, .p004-moves{
+  font-size: 30px;
+  position: relative;
+  left: 80px;
+  /* bottom: 10px; */
+  }
+  .p1-label, 
+  .p2-label, 
+  .p01-label,
+  .p02-label,
+  .p03-label, 
+  .p001-label,
+  .p003-label,
+  .p002-label,
+  .p004-label{
+  position: relative;
+  right: 90px;
+  top: 30px;
+  }
+#popup{
+  position: absolute;
+  left: 5px !important;
+  top: 80px !important;
+}
+#desktop-tablet-restart-btn:hover, #desktop-tablet-new-game-btn:hover{
+  cursor: pointer;
+}
+#desktop-tablet-new-game-btn:hover{
+  background-color: #6395b8;
+  color: #FCFCFC;
+}
+.current-turn1, .current-turn2{
+  position: relative;
+  top: 30px;
+}
+
+.current-turn01, .current-turn02, .current-turn03{
+  position: relative;
+  top: 30px;
+}
+.current-turn001, .current-turn002, .current-turn003, .current-turn004{
+  position: relative;
+  top: 30px;
+}
+
+  
+}
